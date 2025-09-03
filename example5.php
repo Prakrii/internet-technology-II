@@ -12,19 +12,24 @@
     $isStudent = true;
     //using AND operator
     if ($age>18 && $isStudent){
-        echo "<p>Eligible for a student discount</p>";
+        echo "<p>Eligible for a student discount</p>";// using echo to display the logical output
     }
     //using OR operator
     $rolledSix = false;
     $rolledFive = true;
     if ($rolledSix || $rolledFive){
-        echo "<p> you rolled 5 or a 6</p>"
+        echo "<p> you rolled 5 or a 6</p>";// using echo to display the logical output
     }
 
     //Using NOT operator 
-    $
+    $isEmpty = false;
+    if (!$isEmpty){
+        echo "<p>The variable is not empty</p>";// using echo to display the logical output
+    }
 
-
+    // Using Null Coalesing Operator 
+    $username = $_GET['user'] ?? 'Guest';// if $_GET ['user'] is not set then the $username will be 'Guest'
+    echo "<p>Welcome, ".$username."!</p>";
     ?>
 </body>
 </html>
