@@ -11,7 +11,7 @@
     $age = 25;
     $isStudent = true;
     //using AND operator
-    if ($age>18 && $isStudent){
+    if ($age<18 && $isStudent){
         echo "<p>Eligible for a student discount</p>";// using echo to display the logical output
     }
     //using OR operator
