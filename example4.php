@@ -14,7 +14,7 @@
 
     $score = 50;
     $score += 50; // adding 50 to score (add and assign operator)
-    echo "<p>".$score."<p>"
+    echo "<p>".$score."<p>"//displaying the score
     ?>
 </body>
 </html>
