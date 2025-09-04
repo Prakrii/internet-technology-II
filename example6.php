@@ -11,7 +11,7 @@
 
     define ('today', 'September 3, 2025');//defining a custom constant
 
-    echo '<p> Today is '.today.".<br> this server is running version <strong>".PHP_OS."</strong> operating system.</p>";//printing the defined constant using echo
+    echo "<p> Today is ".today.".<br> this server is running version <strong>".PHP_OS."</strong> operating system.</p>"; //printing the defined constant using echo
     ?>
 </body>
 </html>
