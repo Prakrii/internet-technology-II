@@ -13,8 +13,8 @@
     $int = 12;
     $float = 12.22;
     $boolean = true;
-    echo"<p> var_dump($name,$int,$float,$boolean)</p>"
-
+    echo"<p> var_dump($name,$int,$float,$boolean)</p>";
+    echo var_dump($name,$int,$float,$boolean) ;
 ?>
     
 </body>
