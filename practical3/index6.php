@@ -12,6 +12,8 @@
 
         $str = "tag1,tag2,tag3";
 
+        echo "at start => $str <br>";
+
         // Convert string to array
 
         $arr = explode(",", $str);
@@ -20,7 +22,7 @@
 
         $result = implode(" | ", $arr);
 
-        echo $result;      // tag1 | tag2 | tag3
+        echo "after => $result";      // tag1 | tag2 | tag3
 
     ?>
 </body>
