@@ -1,4 +1,4 @@
-// Use `foreach` to print all values of the `$product` array
+ <!-- Use `foreach` to print all values of the `$product` array -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
