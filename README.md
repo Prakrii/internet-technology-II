@@ -32,7 +32,7 @@ The goal of this repo is to:
 
 ## 🚀 Getting Started
 
-To run the PHP files:
+To run the PHP files :
 
 1. Make sure you have a local server environment like **XAMPP**, **WAMP**, or **MAMP** installed.
 2. Place the repository folder inside the `htdocs` (or equivalent) directory.
