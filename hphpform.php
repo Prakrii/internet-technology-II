@@ -6,25 +6,72 @@
     <title>Simple PHP Form</title>
 </head>
 <body>
-    <form action="" method='POST'>
-        <label for="name">Name:</label>
-        <input type="text" name="name" value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ;?>">
-        <input type="submit" value="Send">
-    </form>
-    <?php
 
-    if ($_SERVER['REQUEST_METHOD']==='POST'){
-       
-if (isset(($_POST['name']))){
+<form action="" method="POST">
 
-    $name = htmlspecialchars($_POST['name']);
-        
-    echo "$name";
-    
-}
+    <!-- Name -->
+    <label>Name:</label>
+    <input type="text" name="name"
+        value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>">
+    <br><br>
+
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="text" name="email"
+        value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+    <br><br>
+
+    <!-- Password -->
+    <label>Password:</label>
+    <input type="password" name="password">
+    <br><br>
+
+    <!-- Gender -->
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male"
+        <?php if (isset($_POST['gender']) && $_POST['gender'] === 'Male') echo 'checked'; ?>> Male
+
+    <input type="radio" name="gender" value="Female"
+        <?php if (isset($_POST['gender']) && $_POST['gender'] === 'Female') echo 'checked'; ?>> Female
+    <br><br>
+
+
+    <input type="submit" value="Send">
+</form>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Name
+    if (!empty($_POST['name'])) {
+        $name = htmlspecialchars($_POST['name']);
+        echo "Name: $name<br>";
     }
 
-    
-    ?>
+    // Email
+    if (!empty($_POST['email'])) {
+        $email = htmlspecialchars($_POST['email']);
+
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Email: $email<br>";
+        } else {
+            echo "Invalid email address<br>";
+        }
+    }
+
+    // Password 
+    if (!empty($_POST['password'])) {
+        $password = htmlspecialchars($_POST['password']);
+        echo "Password received (not displayed for security)<br>";
+    }
+
+    // Gender
+    if (!empty($_POST['gender'])) {
+        $gender = htmlspecialchars($_POST['gender']);
+        echo "Gender: $gender<br>";
+    }
+}
+?>
+
 </body>
 </html>
