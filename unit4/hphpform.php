@@ -9,6 +9,7 @@
 
 <form action="" method="POST">
 
+
     <!-- Name -->
     <label>Name:</label>
     <input type="text" name="name"
@@ -23,7 +24,7 @@
 
     <!-- Password -->
     <label>Password:</label>
-    <input type="password" name="password">
+    <input type="password" name="password" required >
     <br><br>
 
     <!-- Gender -->
@@ -35,12 +36,29 @@
         <?php if (isset($_POST['gender']) && $_POST['gender'] === 'Female') echo 'checked'; ?>> Female
     <br><br>
 
+  <label>Hobbies :</label><br>
+
+<input type="checkbox" name="hobbies[]" value="reading" <?php $Submitted_hobbies =htmlspecialchars($_POST['hobbies']) ?? [];  if (in_array('reading', $submitted_hobbies)) echo 'checked="checked"'; ?>> Reading<br>
+
+<input type="checkbox" name="hobbies[]" value="sports" <?php if (in_array('sports', $submitted_hobbies)) echo 'checked="checked"'; ?>>
+Sports<br>
+
+<input type="checkbox" name="hobbies[]" value="music" <?php if (in_array('music', $submitted_hobbies)) echo 'checked="checked"'; ?>>
+Music<br>
+
+<input type="checkbox" name="hobbies[]" value="travel" <?php if (in_array('travel', $submitted_hobbies)) echo 'checked="checked"'; ?>>
+Travel<br><br>
 
     <input type="submit" value="Send">
 </form>
 
 <?php
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
 
     // Name
     if (!empty($_POST['name'])) {
@@ -70,6 +88,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $gender = htmlspecialchars($_POST['gender']);
         echo "Gender: $gender<br>";
     }
+
+    
+   
+
+    
+
 }
 ?>
 
